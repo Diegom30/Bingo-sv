@@ -11,7 +11,7 @@ export const initializeServer = () => {
   app.use(express.urlencoded({ extended: true }));
 
   app.use(cors({
-    origin: process.env.FRONTEND_URL_HOST,
+    origin: "https://bingo-cliente.vercel.app",
     methods: ['GET', 'POST'],
     credentials: true
   }));
@@ -20,7 +20,7 @@ export const initializeServer = () => {
   
   const io = new Server(httpServer, {
     cors: {
-      origin: process.env.FRONTEND_URL_HOST,
+      origin: "https://bingo-cliente.vercel.app",
       methods: ["GET", "POST"],
       credentials: true
     },
